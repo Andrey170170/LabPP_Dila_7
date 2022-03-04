@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/lab-pp-7-ak/databases/Teachers",
+      "type": "mssql.azure",
+      "connectionId": "TestConnect"
+    }
+  }
+}
