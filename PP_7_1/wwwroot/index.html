@@ -4,35 +4,31 @@
     <script src="script.js"></script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>Список отелей</title>
+    <title>Зоопарк</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body onload="InitialFunction();">
-<h2>Список отелей</h2>
-<form name="teacherForm">
-    <input type="hidden" id="TeacherID" value="0"/>
+<h2>Зоопарк</h2>
+<form name="ZooForm">
+    <input type="hidden" id="Id" value="0"/>
     <div class="form-group col-md-5">
-        <label for="FullName">Полное имя:</label>
-        <input class="form-control" id="FullName"/>
+        <label for="Name">Имя:</label>
+        <input class="form-control" id="Name"/>
+    </div>
+    <div class="form-group col-md-5">
+        <label for="View">Вид:</label>
+        <input class="form-control" id="View" type="text"/>
     </div>
     <div class="form-group col-md-5">
         <label for="Age">Возраст:</label>
         <input class="form-control" id="Age" type="number"/>
     </div>
     <div class="form-group col-md-5">
-        <label for="YearsOfWork">Стаж:</label>
-        <input class="form-control" id="YearsOfWork" type="number"/>
-    </div>
-    <div class="form-group col-md-5">
-        <label for="Phone">Телефон:</label>
-        <input class="form-control" id="Phone" type="number"/>
-    </div>
-    <div class="form-group col-md-5">
-        <label for="Email">email:</label>
-        <input class="form-control" id="Email" type="email"/>
+        <label for="Gender">Пол:</label>
+        <input class="form-control" id="Gender" type="text"/>
     </div>
     <div class="panel-body">
-        <button type="submit" id="submit" class="btn btnprimary">Сохранить</button>
+        <button type="submit" id="submit" class="btn btn-primary">Сохранить</button>
         <a id="reset" class="btn btn-primary">Сбросить</a>
     </div>
 </form>
@@ -40,11 +36,10 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>ФИО</th>
+        <th>Имя</th>
+        <th>Вид</th>
         <th>Возраст</th>
-        <th>Стаж</th>
-        <th>Телефон</th>
-        <th>email</th>
+        <th>Пол</th>
         <th></th>
     </tr>
     </thead>

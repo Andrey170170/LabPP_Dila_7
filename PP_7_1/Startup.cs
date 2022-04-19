@@ -8,19 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using PP_7_1.Models;
 
-//Data Source=tcp:lab-pp-7-2.database.windows.net,1433;Initial Catalog=Teachers;User Id=Andrey@lab-pp-7-2;Password=13qeadSW2
-//tcp:lab-pp-7-2.database.windows.net,1433    
 namespace PP_7_1
 {
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TeacherContext>(options =>
+            services.AddDbContext<AnimalContext>(options =>
                 options.UseSqlServer(SqlConnectionIntegratedSecurity));
             services.AddControllers();
         }
@@ -29,14 +26,9 @@ namespace PP_7_1
         {
             get
             {
-                var sb = new SqlConnectionStringBuilder
-                {
-                    DataSource = "tcp:lab-pp-7-2.database.windows.net,1433;",
-                    IntegratedSecurity = false,
-                    InitialCatalog = "Teachers",
-                    UserID = "Andrey",
-                    Password = "13qeadSW2",
-                };
+                var sb = new SqlConnectionStringBuilder();
+                sb.ConnectionString =
+                    @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ZOO;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 return sb.ConnectionString;
             }
         }
@@ -47,10 +39,7 @@ namespace PP_7_1
             app.UseRouting();
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers(); 
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
